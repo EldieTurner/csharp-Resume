@@ -11,7 +11,7 @@ class MyResume
 
         resume.Title = "Senior .NET Developer";
 
-        resume.ContactInfo = new ContactInfo()
+        resume.ContactInfo = new ContactInfo
         {
                 Name = "Eldie Turner",
                 Phone = "440.678.8268",
@@ -21,14 +21,14 @@ class MyResume
                 Twitter = new Uri("https://twitter.com/eldieturner")
         };
 
-        resume.WorkExperiences = new List<WorkExperience>()
+        resume.WorkExperiences = new List<WorkExperience>
         {
-            new WorkExperience()
+            new WorkExperience
             {
                 CompanyName = "Onosys (a LivingSocial Company)",
-                From = DateTime.Parse("06/01/2014"), To = DateTime.Now,
+                From = "06/01/2014".Parse(), To = DateTime.Now,
                 Title = "Senior .NET Developer",
-                Duties = new List<Duty>()
+                Duties = new List<Duty>
                 {
                     "• Perform bug fixes for existing applications (MVC, and Web API)",
                     "• Help create new features for existing applications",
@@ -38,12 +38,12 @@ class MyResume
                 }
             },
 
-            new WorkExperience()
+            new WorkExperience
             {
                 CompanyName = "The Cleveland Clinic",
-                From = DateTime.Parse("03/01/2013"), To = DateTime.Parse("06/01/2014"),
+                From = "03/01/2013".Parse(), To = "06/01/2014".Parse(),
                 Title = "Web Development Manager",
-                Duties = new List<Duty>()
+                Duties = new List<Duty>
                 {
                     "• Design Databases within SQL Server 2008R2/2012",
                     "• Design new .NET applications with frameworks (4.5 and 4.5.1)",
@@ -57,13 +57,13 @@ class MyResume
                 }
             },
 
-            new WorkExperience()
+            new WorkExperience
             {
                 CompanyName = "SummaCare",
-                ContratingCompany = "Randstad Technologies",
-                From = DateTime.Parse("09/2012"), To = DateTime.Parse("03/01/2013"),
+                ContractingCompany = "Randstad Technologies",
+                From = "09/01/2012".Parse(), To = "03/01/2013".Parse(),
                 Title = "Senior .NET Developer",
-                Duties = new List<Duty>()
+                Duties = new List<Duty>
                 {
                     "• Modify existing .NET4.0  applications",
                     "• Work with SQL Server 2008R2 and Oracle databases",
@@ -75,13 +75,13 @@ class MyResume
                 }
             },
 
-            new WorkExperience()
+            new WorkExperience
             {
                 CompanyName = "Westfield Insurance",
-                ContratingCompany = "TekSystems",
-                From = DateTime.Parse("02/01/2012"), To = DateTime.Parse("08/01/2012"),
+                ContractingCompany = "TekSystems",
+                From = "02/01/2012".Parse(), To = "08/01/2012".Parse(),
                 Title = "Test Automation Specialist",
-                Duties = new List<Duty>()
+                Duties = new List<Duty>
                 {
                     "• Develop an ASP.NET application for internal use",
                     "• Utilize Jquery, AJAX.NET, and Entity Framework in new application",
@@ -94,13 +94,13 @@ class MyResume
                 }
             },
 
-            new WorkExperience()
+            new WorkExperience
             {
                 CompanyName = "NASA (National Aeronautics and Space Administration)",
-                ContratingCompany = "ASRC (Arctic Slope Regional Corporation)",
-                From = DateTime.Parse("08/01/2006"), To = DateTime.Parse("02/01/2012"),
+                ContractingCompany = "ASRC (Arctic Slope Regional Corporation)",
+                From = "08/01/2006".Parse(), To = "02/01/2012".Parse(),
                 Title = "Program Analyst IV",
-                Duties = new List<Duty>()
+                Duties = new List<Duty>
                 {
                     "• Lead Programmer on 2 contract management applications (ASP.NET)",
                     "• Maintain several ASP.NET (C# and VB) applications using Visual Studio (2003,2008 and 2010)",
@@ -123,7 +123,7 @@ class MyResume
             },
         };
 
-        resume.TechnicalSkills  = new List<skill>()
+        resume.TechnicalSkills  = new List<skill>
         {
             "dot net framework 1.1 - 4.5.2", "asp.net mvc", ".net Web api", "c#",
             "object oriented programming (oop)", "design patterns", "functional programming",
@@ -131,15 +131,15 @@ class MyResume
             "javascript", "jquery", "knockout", "angularjs", "css", "html5"
         };
 
-        resume.Education = new List<Degree>()
+        resume.Education = new List<Degree>
         {
             new Degree()
             {
                 School = "Lakeland Community College",
                 Type = "Associate of Art",
-                Year = "2001"
+                Year = "06/01/2001".Parse()
             }
         };
-        resume.Close();
+        resume.End();
     }
 }
