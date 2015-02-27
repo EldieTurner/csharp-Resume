@@ -6,20 +6,20 @@ class Resume
     public Resume() { }
     public string Title { get; set; }
     public ContactInfo ContactInfo {get;set;}
-    public List<WorkExperience> WorkExperiences { get; set; }
+    public IList<WorkExperience> WorkExperiences { get; set; }
     public List<string> TechnicalSkills { get; set; }
-    public List<Degree> Education { get; set; }
+    public IList<Degree> Education { get; set; }
 
     public void Close()
     {
-        center(this.Title);
+        center(Title);
         lIne();
-        center(this.ContactInfo.Name);
-        center(this.ContactInfo.Phone);
-        center(this.ContactInfo.Email);
-        center(this.ContactInfo.Website);
-        center(this.ContactInfo.LinkedIn);
-        center(this.ContactInfo.Twitter);
+        center(ContactInfo.Name);
+        center(ContactInfo.Phone);
+        center(ContactInfo.Email);
+        center(ContactInfo.Website.AbsoluteUri);
+        center(ContactInfo.LinkedIn.AbsoluteUri);
+        center(ContactInfo.Twitter.AbsoluteUri);
         Console.ReadLine();
 
         foreach (var work in WorkExperiences)
@@ -27,8 +27,8 @@ class Resume
             clear();
             write(work.Title);
             lIne();
-            write("Company: " + work.CompanName);
-            write("Years :" + work.From + " - " + work.To);
+            write("Company: " + work.CompanyName);
+            write("Years :" + work.From.ToShortDateString() + " - " + work.To.ToShortDateString());
             foreach(var duty in work.Duties)
                 indent(duty);
             Console.ReadLine();
@@ -81,19 +81,19 @@ class ContactInfo
     public string Name { get; set; }
     public string Phone { get; set; }
     public string Email { get; set; }
-    public string Website { get; set; }
-    public string LinkedIn { get; set; }
-    public string Twitter { get; set; }
+    public Uri Website { get; set; }
+    public Uri LinkedIn { get; set; }
+    public Uri Twitter { get; set; }
 }
 
 class WorkExperience
 {
-    public string CompanName { get; set; }
+    public string CompanyName { get; set; }
     public string ContratingCompany { get; set; }
-    public string From { get; set; }
-    public string To { get; set; }
+    public DateTime From { get; set; }
+    public DateTime To { get; set; }
     public string Title { get; set; }
-    public List<string> Duties { get; set; }
+    public IList<string> Duties { get; set; }
 }
 
 class Degree

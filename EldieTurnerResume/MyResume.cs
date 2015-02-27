@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Duty = System.String;
 using skill = System.String;
 
@@ -15,17 +16,17 @@ class MyResume
                 Name = "Eldie Turner",
                 Phone = "440.678.8268",
                 Email = "Eldie.Turner@live.com",
-                Website = "http://EldieTurner.com",
-                LinkedIn = "https://www.linkedin.com/in/eldieturner",
-                Twitter = "https://twitter.com/eldieturner" //I don't really tweet
+                Website = new Uri("http://EldieTurner.com"),
+                LinkedIn = new Uri("https://www.linkedin.com/in/eldieturner"),
+                Twitter = new Uri("https://twitter.com/eldieturner")
         };
 
         resume.WorkExperiences = new List<WorkExperience>()
         {
             new WorkExperience()
             {
-                CompanName = "Onosys (a LivingSocial Company)",
-                From = "06/2014", To = "Present",
+                CompanyName = "Onosys (a LivingSocial Company)",
+                From = DateTime.Parse("06/01/2014"), To = DateTime.Now,
                 Title = "Senior .NET Developer",
                 Duties = new List<Duty>()
                 {
@@ -39,8 +40,8 @@ class MyResume
 
             new WorkExperience()
             {
-                CompanName = "The Cleveland Clinic",
-                From = "03/2013", To = "06/2014",
+                CompanyName = "The Cleveland Clinic",
+                From = DateTime.Parse("03/01/2013"), To = DateTime.Parse("06/01/2014"),
                 Title = "Web Development Manager",
                 Duties = new List<Duty>()
                 {
@@ -58,9 +59,9 @@ class MyResume
 
             new WorkExperience()
             {
-                CompanName = "SummaCare",
+                CompanyName = "SummaCare",
                 ContratingCompany = "Randstad Technologies",
-                From = "09/2012", To = "03/2013",
+                From = DateTime.Parse("09/2012"), To = DateTime.Parse("03/01/2013"),
                 Title = "Senior .NET Developer",
                 Duties = new List<Duty>()
                 {
@@ -76,9 +77,9 @@ class MyResume
 
             new WorkExperience()
             {
-                CompanName = "Westfield Insurance",
+                CompanyName = "Westfield Insurance",
                 ContratingCompany = "TekSystems",
-                From = "02/2012", To = "08/2012",
+                From = DateTime.Parse("02/01/2012"), To = DateTime.Parse("08/01/2012"),
                 Title = "Test Automation Specialist",
                 Duties = new List<Duty>()
                 {
@@ -95,9 +96,9 @@ class MyResume
 
             new WorkExperience()
             {
-                CompanName = "NASA (National Aeronautics and Space Administration)",
+                CompanyName = "NASA (National Aeronautics and Space Administration)",
                 ContratingCompany = "ASRC (Arctic Slope Regional Corporation)",
-                From = "08/2006", To = "02/2012",
+                From = DateTime.Parse("08/01/2006"), To = DateTime.Parse("02/01/2012"),
                 Title = "Program Analyst IV",
                 Duties = new List<Duty>()
                 {
